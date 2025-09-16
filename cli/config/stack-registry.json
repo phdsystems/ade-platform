@@ -34,7 +34,7 @@
             "files": {
               "src/index.mjs": "TEMPLATE_REF::express/src/index.mjs",
               "package.json": "TEMPLATE_REF::express/package.json",
-              "deploy/Dockerfile": "FROM node:20-alpine\nWORKDIR /app\nCOPY package.json .\nRUN npm i --omit=dev\nCOPY . .\nENV PORT=8000\nCMD [\"npm\",\"start\"]\n",
+              "deploy/Dockerfile": "TEMPLATE_REF::express/Dockerfile",
               "docs/README.md": "# {{serviceName}}\n",
               ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
             }
@@ -51,7 +51,7 @@
             "files": {
               "cmd/{{serviceName}}/main.go": "TEMPLATE_REF::go-fiber/cmd/serviceName/main.go",
               "go.mod": "module example.com/{{serviceName}}\n\ngo 1.22\n\nrequire github.com/gofiber/fiber/v2 v2.52.0\n",
-              "deploy/Dockerfile": "FROM golang:1.22-alpine\nWORKDIR /app\nCOPY . .\nRUN go build -o svc ./cmd/{{serviceName}}\nENV PORT={{port}}\nCMD [\"./svc\"]\n",
+              "deploy/Dockerfile": "TEMPLATE_REF::go-fiber/Dockerfile",
               "docs/README.md": "# {{serviceName}}\n",
               ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
             }
