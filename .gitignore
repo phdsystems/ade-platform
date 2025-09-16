@@ -114,7 +114,10 @@ config/local.py
 Thumbs.db
 Desktop.ini
 
-# Package locks (optional - remove if you want to commit these)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Package locks
+package-lock.json
+yarn.lock
+# Keep pnpm-lock.yaml for reproducible builds
+
+# VSCode Extension builds
+*.vsix
