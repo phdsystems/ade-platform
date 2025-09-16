@@ -2,10 +2,10 @@ import * as vscode from 'vscode';
 import { spawn } from 'child_process';
 import * as path from 'path';
 export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand('phd.scaffoldPreview', async () => {
+  const disposable = vscode.commands.registerCommand('ade.scaffoldPreview', async () => {
     try {
       const cfg = vscode.workspace.getConfiguration();
-      const bin = cfg.get<string>('phd.coreBinaryPath', 'phd-core');
+      const bin = cfg.get<string>('ade.coreBinaryPath', 'phd-core');
       const language = await qp('Language', ['python','node','go']);
       const fw = await qp('Framework', language==='python' ? ['fastapi'] : language==='node' ? ['express'] : ['fiber']);
       const service = await input('Service name');

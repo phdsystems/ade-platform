@@ -2,9 +2,13 @@
   "name": "phd-platform",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "prepare": "husky install",
     "compile:vsce": "cd vscode-extension && npm i && npm run compile"
+  },
+  "dependencies": {
+    "mkdirp": "^3.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",

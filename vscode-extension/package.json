@@ -1,21 +1,33 @@
 {
-  "name": "phd-scaffold",
-  "displayName": "PHD Scaffold",
+  "name": "ade",
+  "displayName": "ADE",
   "publisher": "your-org",
   "version": "0.0.1",
   "engines": { "vscode": "^1.90.0" },
-  "activationEvents": ["onCommand:phd.scaffoldPreview"],
+  "repository": { "type": "git", "url": "https://example.com/your-org/phd-platform.git" },
+  "files": ["out/**/*", "package.json", "tsconfig.json"],
+  "activationEvents": ["onCommand:ade.scaffoldPreview"],
   "contributes": {
-    "commands": [{ "command": "phd.scaffoldPreview", "title": "PHD: Scaffold Preview" }],
+    "commands": [{ "command": "ade.scaffoldPreview", "title": "ADE: Scaffold Preview" }],
     "configuration": {
       "type": "object",
-      "title": "PHD Scaffold",
+      "title": "ADE",
       "properties": {
-        "phd.coreBinaryPath": { "type": "string", "default": "phd-core", "description": "Path to phd-core binary" }
+        "ade.coreBinaryPath": { "type": "string", "default": "phd-core", "description": "Path to phd-core binary" }
       }
     }
   },
-  "main": "./out/src/extension.js",
-  "scripts": { "compile": "tsc -p ./", "watch": "tsc -watch -p ./" },
-  "devDependencies": { "@types/node": "^20.11.30", "typescript": "^5.4.0", "vsce": "^2.15.0" }
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npm run compile && vsce package --no-dependencies",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.1.1",
+    "typescript": "^5.4.0"
+  }
 }
