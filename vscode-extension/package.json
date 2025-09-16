@@ -4,7 +4,7 @@
   "publisher": "your-org",
   "version": "0.0.1",
   "engines": { "vscode": "^1.90.0" },
-  "repository": { "type": "git", "url": "https://example.com/your-org/phd-platform.git" },
+  "repository": { "type": "git", "url": "https://example.com/your-org/ade-platform.git" },
   "files": ["out/**/*", "package.json", "tsconfig.json"],
   "activationEvents": ["onCommand:ade.scaffoldPreview"],
   "contributes": {
