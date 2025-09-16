@@ -17,9 +17,11 @@
             "files": {
               "src/app/main.py": "TEMPLATE_REF::fastapi/app/main.py",
               "requirements.txt": "TEMPLATE_REF::fastapi/requirements.txt",
+              "pyproject.toml": "TEMPLATE_REF::fastapi/pyproject.toml",
+              "Makefile": "TEMPLATE_REF::fastapi/Makefile",
               "deploy/Dockerfile": "TEMPLATE_REF::fastapi/Dockerfile",
-              "docs/README.md": "# {{serviceName}}\n",
-              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
+              "docs/README.md": "# {{serviceName}}\n\n## Quick Start\n\n```bash\n# Install with uv (10-100x faster than pip)\nmake install\n\n# Run locally\nmake run\n\n# Build Docker image\nmake docker-build\n```\n",
+              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\nENVIRONMENT=development\n"
             }
           }
         }
@@ -34,9 +36,11 @@
             "files": {
               "src/index.mjs": "TEMPLATE_REF::express/src/index.mjs",
               "package.json": "TEMPLATE_REF::express/package.json",
+              "Makefile": "TEMPLATE_REF::express/Makefile",
               "deploy/Dockerfile": "TEMPLATE_REF::express/Dockerfile",
-              "docs/README.md": "# {{serviceName}}\n",
-              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
+              "docs/README.md": "# {{serviceName}}\n\n## Quick Start\n\n```bash\n# Install with pnpm (2x faster than npm)\nmake install\n\n# Run locally\nmake run\n\n# Build Docker image\nmake docker-build\n```\n",
+              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\nNODE_ENV=development\nCORS_ORIGIN=*\n",
+              ".npmrc": "# Use pnpm for package management\npackage-manager=pnpm\n"
             }
           }
         }

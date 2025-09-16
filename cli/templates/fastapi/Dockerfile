@@ -3,18 +3,21 @@ FROM python:3.11-slim as builder
 
 WORKDIR /app
 
-# Install build dependencies
+# Install uv for ultra-fast Python package management
+# uv is 10-100x faster than pip
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
+    curl \
+    ca-certificates \
+    && curl -LsSf https://astral.sh/uv/install.sh | sh \
     && rm -rf /var/lib/apt/lists/*
 
-# Use pip-tools for deterministic builds
-RUN pip install --no-cache-dir pip-tools
+ENV PATH="/root/.cargo/bin:${PATH}"
 
-# Copy and compile requirements
+# Copy and install dependencies with uv
 COPY requirements.txt .
-RUN pip-compile requirements.txt -o requirements.lock && \
-    pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.lock
+RUN uv venv /app/venv && \
+    . /app/venv/bin/activate && \
+    uv pip install -r requirements.txt
 
 # Runtime stage
 FROM python:3.11-slim
@@ -24,10 +27,12 @@ WORKDIR /app
 # Create non-root user
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
 
-# Copy wheels and install
-COPY --from=builder /app/wheels /wheels
-COPY --from=builder /app/requirements.lock .
-RUN pip install --no-cache-dir /wheels/* && rm -rf /wheels
+# Copy virtual environment from builder
+COPY --from=builder --chown=appuser:appuser /app/venv /app/venv
+
+# Set environment to use venv
+ENV PATH="/app/venv/bin:${PATH}"
+ENV VIRTUAL_ENV=/app/venv
 
 # Copy application code
 COPY --chown=appuser:appuser . .

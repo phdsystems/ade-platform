@@ -8,8 +8,11 @@
     "start": "node --enable-source-maps src/index.mjs",
     "start:cluster": "node --enable-source-maps src/cluster.mjs",
     "dev": "node --watch --enable-source-maps src/index.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:fast": "pnpm install",
+    "build:docker": "docker build -t {{serviceName}} ."
   },
+  "packageManager": "pnpm@8.15.1",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",

@@ -1,19 +1,20 @@
 # Multi-stage build for optimal size and performance
 FROM node:20-alpine AS deps
-# Install dependencies only when needed
 WORKDIR /app
 
 # Install pnpm for faster, more efficient package management
+# pnpm is up to 2x faster than npm and uses less disk space
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # Copy package files
-COPY package.json pnpm-lock.yaml* package-lock.json* yarn.lock* ./
+COPY package.json pnpm-lock.yaml* ./
 
-# Install dependencies with frozen lockfile
-RUN if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; \
-    elif [ -f package-lock.json ]; then npm ci; \
-    elif [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-    else echo "No lockfile found, installing with npm" && npm install; fi
+# Generate lockfile if it doesn't exist and install dependencies
+RUN if [ -f pnpm-lock.yaml ]; then \
+      pnpm install --frozen-lockfile; \
+    else \
+      pnpm install --lockfile-only && pnpm install --frozen-lockfile; \
+    fi
 
 # Rebuild the source code only when needed
 FROM node:20-alpine AS builder
