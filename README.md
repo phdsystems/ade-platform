@@ -177,6 +177,11 @@ MIT - see [LICENSE](LICENSE) for details
 - 🧪 [VSCode Extension Testing](docs/development/vscode-extension.md) - Test the extension
 - 📝 [CLI Commands Reference](docs/api/cli-commands.md) - Detailed CLI usage
 
+### Quick Start Guides
+
+- 🪟 [Windows Quick Start](docs/guides/windows-quick-start.md) - Fast setup for Windows users
+- 🔧 [Extension Build & Deploy](docs/guides/vscode-extension-deployment.md) - Build, package, and install the extension
+
 ## Support
 
 - 🐛 [Issue Tracker](https://github.com/phdsystems/ade-platform/issues)

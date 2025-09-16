@@ -26,6 +26,8 @@ Welcome to the ADE Platform documentation! This guide will help you understand, 
 - [Adding New Languages/Frameworks](guides/adding-languages.md)
 - [Custom Templates](guides/custom-templates.md)
 - [CI/CD Integration](guides/cicd-integration.md)
+- 🪟 [Windows Quick Start](guides/windows-quick-start.md) - Fast setup for Windows/WSL users
+- 🔧 [VSCode Extension Build & Deploy](guides/vscode-extension-deployment.md) - Complete extension deployment guide
 
 ### Architecture
 - [System Architecture](architecture/overview.md) - High-level system design
