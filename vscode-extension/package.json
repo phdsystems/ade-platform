@@ -3,9 +3,10 @@
   "displayName": "ADE",
   "publisher": "your-org",
   "version": "0.0.1",
+  "license": "MIT",
   "engines": { "vscode": "^1.90.0" },
   "repository": { "type": "git", "url": "https://example.com/your-org/ade-platform.git" },
-  "files": ["out/**/*", "package.json", "tsconfig.json"],
+  "files": ["out/**/*", "package.json", "tsconfig.json", "LICENSE.md"],
   "activationEvents": ["onCommand:ade.scaffoldPreview"],
   "contributes": {
     "commands": [{ "command": "ade.scaffoldPreview", "title": "ADE: Scaffold Preview" }],
