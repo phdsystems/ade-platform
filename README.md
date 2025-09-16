@@ -167,9 +167,15 @@ We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guid
 
 MIT - see [LICENSE](LICENSE) for details
 
+## Documentation
+
+- 📚 [Full Documentation](docs/README.md) - Complete documentation index
+- 🚀 [Development Setup](docs/development/setup.md) - Get started with development
+- 🧪 [VSCode Extension Testing](docs/development/vscode-extension.md) - Test the extension
+- 📝 [CLI Commands Reference](docs/api/cli-commands.md) - Detailed CLI usage
+
 ## Support
 
-- 📖 [Documentation](docs/README.md)
 - 🐛 [Issue Tracker](https://github.com/phdsystems/ade-platform/issues)
 - 💬 [Discussions](https://github.com/phdsystems/ade-platform/discussions)
 
