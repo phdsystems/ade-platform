@@ -20,7 +20,9 @@
     "typecheck": "tsc --noEmit",
     "test": "pnpm run test:cli && pnpm run test:extension",
     "test:cli": "cd cli && pnpm test",
-    "test:extension": "cd vscode-extension && pnpm test"
+    "test:extension": "cd vscode-extension && pnpm test",
+    "test:coverage": "cd cli && pnpm test:coverage",
+    "test:watch": "cd cli && pnpm test:watch"
   },
   "dependencies": {
     "mkdirp": "^3.0.1"
