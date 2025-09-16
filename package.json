@@ -3,19 +3,24 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "packageManager": "pnpm@8.15.1",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "prepare": "husky install",
-    "compile:vsce": "cd vscode-extension && npm i && npm run compile",
-    "build:cli": "cd cli && npm i && npm run build",
-    "build": "npm run build:cli && npm run compile:vsce",
+    "compile:vsce": "cd vscode-extension && pnpm i && pnpm run compile",
+    "build:cli": "cd cli && pnpm i && pnpm run build",
+    "build": "pnpm run build:cli && pnpm run compile:vsce",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "typecheck": "tsc --noEmit",
-    "test": "npm run test:cli && npm run test:extension",
-    "test:cli": "cd cli && npm test",
-    "test:extension": "cd vscode-extension && npm test"
+    "test": "pnpm run test:cli && pnpm run test:extension",
+    "test:cli": "cd cli && pnpm test",
+    "test:extension": "cd vscode-extension && pnpm test"
   },
   "dependencies": {
     "mkdirp": "^3.0.1"

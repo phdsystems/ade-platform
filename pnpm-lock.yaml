@@ -1,0 +1,39 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  mkdirp:
+    specifier: ^3.0.1
+    version: 3.0.1
+
+devDependencies:
+  '@commitlint/cli':
+    specifier: ^19.4.0
+    version: 19.4.0
+  '@commitlint/config-conventional':
+    specifier: ^19.4.0
+    version: 19.4.0
+  '@typescript-eslint/eslint-plugin':
+    specifier: ^7.0.0
+    version: 7.0.0
+  '@typescript-eslint/parser':
+    specifier: ^7.0.0
+    version: 7.0.0
+  eslint:
+    specifier: ^8.57.0
+    version: 8.57.0
+  husky:
+    specifier: ^9.0.11
+    version: 9.0.11
+  lint-staged:
+    specifier: ^15.2.8
+    version: 15.2.8
+  prettier:
+    specifier: ^3.2.5
+    version: 3.2.5
+  typescript:
+    specifier: ^5.4.0
+    version: 5.4.0

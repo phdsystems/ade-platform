@@ -28,17 +28,20 @@ cd ade-platform
 ### 2. Install Dependencies
 
 ```bash
+# Install pnpm globally (if not already installed)
+npm install -g pnpm
+
 # Root dependencies
-npm install
+pnpm install
 
 # CLI dependencies
 cd cli
-npm install
+pnpm install
 cd ..
 
 # VSCode extension dependencies
 cd vscode-extension
-npm install
+pnpm install
 cd ..
 ```
 
@@ -46,10 +49,10 @@ cd ..
 
 ```bash
 # Build CLI
-npm run build:cli
+pnpm run build:cli
 
 # Build VSCode extension
-npm run compile:vsce
+pnpm run compile:vsce
 ```
 
 ### 4. Verify Installation
@@ -90,27 +93,27 @@ ade-platform/
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Build the CLI**:
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 4. **Watch for changes** (development mode):
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 5. **Run tests**:
    ```bash
-   npm test
+   pnpm test
    ```
 
 6. **Create global link** (optional):
    ```bash
-   npm link
+   pnpm link
    # Now you can use 'ade-core' command globally
    ```
 
@@ -123,17 +126,17 @@ ade-platform/
 
 2. **Install dependencies**:
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Compile TypeScript**:
    ```bash
-   npm run compile
+   pnpm run compile
    ```
 
 4. **Watch for changes**:
    ```bash
-   npm run watch
+   pnpm run watch
    ```
 
 5. **Open in VSCode**:
@@ -184,7 +187,7 @@ git checkout -b feature/my-feature
 # ...
 
 # Test changes
-npm test
+pnpm test
 
 # Commit
 git add .
@@ -198,13 +201,13 @@ git push origin feature/my-feature
 
 ```bash
 # Run all tests
-npm test
+pnpm test
 
 # Run CLI tests
-cd cli && npm test
+cd cli && pnpm test
 
 # Run extension tests
-cd vscode-extension && npm test
+cd vscode-extension && pnpm test
 
 # Test scaffolding
 node cli/dist/index.js scaffold \
@@ -268,7 +271,7 @@ node cli/dist/index.js scaffold \
 
 3. **Test scaffolding**:
    ```bash
-   npm run build:cli
+   pnpm run build:cli
    node cli/dist/index.js scaffold \
      --language mylang \
      --framework myframework \
@@ -279,27 +282,27 @@ node cli/dist/index.js scaffold \
 
 ```bash
 # ESLint
-npm run lint
+pnpm run lint
 
 # Fix lint issues
-npm run lint:fix
+pnpm run lint:fix
 
 # Format with Prettier
-npm run format
+pnpm run format
 
 # Check formatting
-npm run format:check
+pnpm run format:check
 ```
 
 ### Building for Production
 
 ```bash
 # Build everything
-npm run build
+pnpm run build
 
 # Package VSCode extension
 cd vscode-extension
-npm run package
+pnpm run package
 
 # Creates .vsix file for distribution
 ```
@@ -341,12 +344,12 @@ rm -rf cli/node_modules cli/package-lock.json
 rm -rf vscode-extension/node_modules vscode-extension/package-lock.json
 
 # Reinstall
-npm install
-cd cli && npm install && cd ..
-cd vscode-extension && npm install && cd ..
+pnpm install
+cd cli && pnpm install && cd ..
+cd vscode-extension && pnpm install && cd ..
 
 # Rebuild
-npm run build
+pnpm run build
 ```
 
 ### TypeScript Issues

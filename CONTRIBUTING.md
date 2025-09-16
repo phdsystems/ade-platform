@@ -31,14 +31,14 @@ Please be respectful and professional in all interactions. We're building a welc
 git clone https://github.com/YOUR_USERNAME/ade-platform.git
 cd ade-platform
 
-# Install dependencies
-npm install
-cd cli && npm install && cd ..
-cd vscode-extension && npm install && cd ..
+# Install dependencies (using pnpm for speed)
+pnpm install
+cd cli && pnpm install && cd ..
+cd vscode-extension && pnpm install && cd ..
 
 # Build everything
-npm run build:cli
-npm run compile:vsce
+pnpm run build:cli
+pnpm run compile:vsce
 ```
 
 ### Coding Standards
@@ -82,14 +82,14 @@ docs: update installation instructions
 #### CLI Tests
 ```bash
 cd cli
-npm test
-npm run test:coverage
+pnpm test
+pnpm run test:coverage
 ```
 
 #### Extension Tests
 ```bash
 cd vscode-extension
-npm test
+pnpm test
 ```
 
 ### Project Structure

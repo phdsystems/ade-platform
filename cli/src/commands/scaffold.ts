@@ -53,7 +53,7 @@ export const scaffoldCommand = new Command('scaffold')
         console.log(result.structure.map(f => `  ${chalk.gray('•')} ${f}`).join('\n'));
 
         if (!options.noInstall && config.language === 'node') {
-          console.log(chalk.yellow('\n💡 Run npm install in the service directory to install dependencies'));
+          console.log(chalk.yellow('\n💡 Run pnpm install in the service directory to install dependencies'));
         }
 
         console.log(chalk.green(`\n✅ Service created at: ${result.path}`));

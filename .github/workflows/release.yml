@@ -20,30 +20,34 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-        cache: 'npm'
         registry-url: 'https://registry.npmjs.org'
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8.15.1
 
     - name: Install dependencies
       run: |
-        npm ci
-        cd cli && npm ci && cd ..
-        cd vscode-extension && npm ci && cd ..
+        pnpm install --frozen-lockfile
+        cd cli && pnpm install --frozen-lockfile && cd ..
+        cd vscode-extension && pnpm install --frozen-lockfile && cd ..
 
     - name: Build all components
       run: |
-        cd cli && npm run build && cd ..
-        cd vscode-extension && npm run compile && cd ..
+        cd cli && pnpm run build && cd ..
+        cd vscode-extension && pnpm run compile && cd ..
 
     - name: Package CLI
       run: |
         cd cli
-        npm pack
+        pnpm pack
         mv *.tgz ../ade-core.tgz
 
     - name: Package VSCode Extension
       run: |
         cd vscode-extension
-        npm run package
+        pnpm run package
         mv *.vsix ../ade-extension.vsix
 
     - name: Create Release
@@ -59,7 +63,7 @@ jobs:
 
           #### CLI Tool
           ```bash
-          npm install -g ade-core.tgz
+          pnpm install -g ade-core.tgz
           ```
 
           #### VSCode Extension
@@ -73,7 +77,7 @@ jobs:
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
       run: |
         cd cli
-        npm publish --access public
+        pnpm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       continue-on-error: true

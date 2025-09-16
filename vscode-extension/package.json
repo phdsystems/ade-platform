@@ -4,7 +4,8 @@
   "publisher": "your-org",
   "version": "0.0.1",
   "license": "MIT",
-  "engines": { "vscode": "^1.90.0" },
+  "packageManager": "pnpm@8.15.1",
+  "engines": { "vscode": "^1.90.0", "node": ">=20.0.0", "pnpm": ">=8.0.0" },
   "repository": { "type": "git", "url": "https://example.com/your-org/ade-platform.git" },
   "files": ["out/**/*", "package.json", "tsconfig.json", "LICENSE.md"],
   "activationEvents": ["onCommand:ade.scaffoldPreview", "onCommand:ade.scaffoldGenerate"],
@@ -25,8 +26,8 @@
   "scripts": {
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "package": "npm run compile && vsce package --no-dependencies",
-    "vscode:prepublish": "npm run compile"
+    "package": "pnpm run compile && vsce package --no-dependencies",
+    "vscode:prepublish": "pnpm run compile"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

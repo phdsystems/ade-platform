@@ -36,21 +36,21 @@ ADE Platform is a comprehensive development environment that provides:
 git clone https://github.com/phdsystems/ade-platform.git
 cd ade-platform
 
-# Install dependencies
-npm install
+# Install dependencies (using pnpm for speed)
+pnpm install
 
 # Build the CLI tool
-npm run build:cli
+pnpm run build:cli
 
 # Install globally (optional)
-npm link
+pnpm link
 ```
 
 ### VSCode Extension Setup
 
 ```bash
 # Compile the extension
-npm run compile:vsce
+pnpm run compile:vsce
 
 # Open VSCode in the extension directory
 cd vscode-extension
@@ -141,16 +141,16 @@ Customize templates and conventions in `cli/config/stack-registry.json`:
 
 ```bash
 # Run tests
-npm test
+pnpm test
 
 # Lint code
-npm run lint
+pnpm run lint
 
 # Build all components
-npm run build
+pnpm run build
 
 # Watch mode for development
-npm run dev
+pnpm run dev
 ```
 
 ## Contributing

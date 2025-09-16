@@ -7,12 +7,12 @@ Complete reference for the ADE Platform CLI (`ade-core`).
 ```bash
 # Local installation (from repository)
 cd cli
-npm install
-npm run build
-npm link  # Optional: make available globally
+pnpm install
+pnpm run build
+pnpm link  # Optional: make available globally
 
 # Global installation (when published)
-npm install -g ade-core
+pnpm install -g ade-core
 ```
 
 ## Commands Overview
@@ -360,7 +360,7 @@ Templates use Handlebars syntax with these variables:
 ```bash
 # Ensure CLI is built
 cd cli
-npm run build
+pnpm run build
 
 # Run directly with node
 node cli/dist/index.js [command]

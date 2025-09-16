@@ -15,18 +15,18 @@ This guide covers development and testing of the ADE Platform VSCode extension.
 
 ```bash
 cd vscode-extension
-npm install
+pnpm install
 ```
 
 ### 2. Build the Extension
 
 ```bash
-npm run compile
+pnpm run compile
 ```
 
 Or watch for changes:
 ```bash
-npm run watch
+pnpm run watch
 ```
 
 ## Testing the Extension
@@ -53,7 +53,7 @@ npm run watch
 
 1. Package the extension:
    ```bash
-   npm run package
+   pnpm run package
    ```
    This creates `ade-*.vsix` file
 
@@ -135,7 +135,7 @@ npm run watch
 
 | Issue | Solution |
 |-------|----------|
-| CLI not found | Ensure CLI is built: `cd cli && npm run build` |
+| CLI not found | Ensure CLI is built: `cd cli && pnpm run build` |
 | Extension not loading | Check `vscode-extension/out/` directory exists |
 | Preview blank | Check Developer Console for JavaScript errors |
 | Commands not appearing | Verify `package.json` activation events |
@@ -215,7 +215,7 @@ Key sections in `package.json`:
 
 ### Hot Reload
 
-1. Keep `npm run watch` running
+1. Keep `pnpm run watch` running
 2. Press `Ctrl+R` in Extension Host to reload
 3. Changes apply without restarting
 
@@ -251,14 +251,14 @@ const mockData: PreviewData = {
 3. Test thoroughly
 4. Build production package:
    ```bash
-   npm run package
+   pnpm run package
    ```
 
 ### Publish to Marketplace
 
 ```bash
 # Install vsce globally
-npm install -g @vscode/vsce
+pnpm install -g @vscode/vsce
 
 # Login to publisher account
 vsce login <publisher-name>
@@ -272,7 +272,7 @@ vsce publish
 Share the `.vsix` file directly:
 ```bash
 # Package
-npm run package
+pnpm run package
 
 # Install locally
 code --install-extension ade-*.vsix

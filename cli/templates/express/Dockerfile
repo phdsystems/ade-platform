@@ -20,12 +20,15 @@ RUN if [ -f pnpm-lock.yaml ]; then \
 FROM node:20-alpine AS builder
 WORKDIR /app
 
+# Enable pnpm for build stage
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
 # Copy dependencies
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Build if needed (for TypeScript projects)
-RUN if [ -f "tsconfig.json" ]; then npm run build; fi
+RUN if [ -f "tsconfig.json" ]; then pnpm run build; fi
 
 # Production image, copy all the files and run
 FROM node:20-alpine AS runner
