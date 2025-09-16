@@ -13,7 +13,7 @@
       "type": "object",
       "title": "ADE",
       "properties": {
-        "ade.coreBinaryPath": { "type": "string", "default": "phd-core", "description": "Path to phd-core binary" }
+        "ade.coreBinaryPath": { "type": "string", "default": "ade-core", "description": "Path to ade-core binary" }
       }
     }
   },

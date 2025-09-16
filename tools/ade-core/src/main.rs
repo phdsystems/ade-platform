@@ -3,7 +3,7 @@ use serde::Serialize;
 use anyhow::Result;
 
 #[derive(Parser, Debug)]
-#[command(name="phd-core")]
+#[command(name="ade-core")]
 struct Cli { #[command(subcommand)] cmd: Cmd }
 #[derive(Subcommand,Debug)]
 enum Cmd {
