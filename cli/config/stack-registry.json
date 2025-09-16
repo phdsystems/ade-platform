@@ -4,7 +4,7 @@
       "enforce": true,
       "basePattern": "{domain}",
       "requiredSubdirs": ["src","docs","tests","deploy"],
-      "denyAtRoot": ["src","docs","tests","deploy"]
+      "denyAtRoot": ["src","docs","tests"]
     }
   },
   "languages": {
