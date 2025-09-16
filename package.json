@@ -1,0 +1,18 @@
+{
+  "name": "phd-platform",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky install",
+    "compile:vsce": "cd vscode-extension && npm i && npm run compile"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.4.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.8"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": ["prettier --write"]
+  }
+}

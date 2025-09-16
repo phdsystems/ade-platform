@@ -1,0 +1,21 @@
+{
+  "name": "phd-scaffold",
+  "displayName": "PHD Scaffold",
+  "publisher": "your-org",
+  "version": "0.0.1",
+  "engines": { "vscode": "^1.90.0" },
+  "activationEvents": ["onCommand:phd.scaffoldPreview"],
+  "contributes": {
+    "commands": [{ "command": "phd.scaffoldPreview", "title": "PHD: Scaffold Preview" }],
+    "configuration": {
+      "type": "object",
+      "title": "PHD Scaffold",
+      "properties": {
+        "phd.coreBinaryPath": { "type": "string", "default": "phd-core", "description": "Path to phd-core binary" }
+      }
+    }
+  },
+  "main": "./out/src/extension.js",
+  "scripts": { "compile": "tsc -p ./", "watch": "tsc -watch -p ./" },
+  "devDependencies": { "@types/node": "^20.11.30", "typescript": "^5.4.0", "vsce": "^2.15.0" }
+}

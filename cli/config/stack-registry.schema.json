@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "stack-registry",
+  "type": "object",
+  "properties": {
+    "languages": { "type": "object", "additionalProperties": { "type": "object" } },
+    "conventions": {
+      "type": "object",
+      "properties": {
+        "domainLayout": {
+          "type": "object",
+          "properties": {
+            "enforce": { "type": "boolean" },
+            "basePattern": { "type": "string" },
+            "requiredSubdirs": { "type": "array", "items": { "type": "string" } },
+            "denyAtRoot": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      }
+    }
+  }
+}
