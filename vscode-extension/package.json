@@ -7,9 +7,12 @@
   "engines": { "vscode": "^1.90.0" },
   "repository": { "type": "git", "url": "https://example.com/your-org/ade-platform.git" },
   "files": ["out/**/*", "package.json", "tsconfig.json", "LICENSE.md"],
-  "activationEvents": ["onCommand:ade.scaffoldPreview"],
+  "activationEvents": ["onCommand:ade.scaffoldPreview", "onCommand:ade.scaffoldGenerate"],
   "contributes": {
-    "commands": [{ "command": "ade.scaffoldPreview", "title": "ADE: Scaffold Preview" }],
+    "commands": [
+      { "command": "ade.scaffoldPreview", "title": "ADE: Scaffold Preview", "category": "ADE" },
+      { "command": "ade.scaffoldGenerate", "title": "ADE: Generate Project", "category": "ADE" }
+    ],
     "configuration": {
       "type": "object",
       "title": "ADE",
@@ -29,6 +32,9 @@
     "@types/node": "^20.11.30",
     "@types/vscode": "^1.90.0",
     "@vscode/vsce": "^3.1.1",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0"
   }
 }

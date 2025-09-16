@@ -5,7 +5,17 @@
   "type": "module",
   "scripts": {
     "prepare": "husky install",
-    "compile:vsce": "cd vscode-extension && npm i && npm run compile"
+    "compile:vsce": "cd vscode-extension && npm i && npm run compile",
+    "build:cli": "cd cli && npm i && npm run build",
+    "build": "npm run build:cli && npm run compile:vsce",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:cli && npm run test:extension",
+    "test:cli": "cd cli && npm test",
+    "test:extension": "cd vscode-extension && npm test"
   },
   "dependencies": {
     "mkdirp": "^3.0.1"
@@ -13,10 +23,16 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.4.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.8"
+    "lint-staged": "^15.2.8",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.0"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": ["prettier --write"]
+    "**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
+    "**/*.{js,jsx,json,md}": ["prettier --write"]
   }
 }

@@ -18,8 +18,8 @@
               "src/app/main.py": "TEMPLATE_REF::fastapi/app/main.py",
               "requirements.txt": "TEMPLATE_REF::fastapi/requirements.txt",
               "deploy/Dockerfile": "TEMPLATE_REF::fastapi/Dockerfile",
-              "docs/README.md": "# {serviceName}\n",
-              ".env.example": "PORT=8000\nSERVICE_NAME={serviceName}\n"
+              "docs/README.md": "# {{serviceName}}\n",
+              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
             }
           }
         }
@@ -35,8 +35,8 @@
               "src/index.mjs": "TEMPLATE_REF::express/src/index.mjs",
               "package.json": "TEMPLATE_REF::express/package.json",
               "deploy/Dockerfile": "FROM node:20-alpine\nWORKDIR /app\nCOPY package.json .\nRUN npm i --omit=dev\nCOPY . .\nENV PORT=8000\nCMD [\"npm\",\"start\"]\n",
-              "docs/README.md": "# {serviceName}\n",
-              ".env.example": "PORT=8000\nSERVICE_NAME={serviceName}\n"
+              "docs/README.md": "# {{serviceName}}\n",
+              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
             }
           }
         }
@@ -47,13 +47,13 @@
         "fiber": {
           "deployment": { "defaultPort": 8000 },
           "scaffold": {
-            "folders": ["cmd/{serviceName}","tests","docs","deploy"],
+            "folders": ["cmd/{{serviceName}}","tests","docs","deploy"],
             "files": {
-              "cmd/{serviceName}/main.go": "TEMPLATE_REF::go-fiber/cmd/serviceName/main.go",
-              "go.mod": "module example.com/{serviceName}\n\ngo 1.22\n\nrequire github.com/gofiber/fiber/v2 v2.52.0\n",
-              "deploy/Dockerfile": "FROM golang:1.22-alpine\nWORKDIR /app\nCOPY . .\nRUN go build -o svc ./cmd/{serviceName}\nENV PORT=8000\nCMD [\"./svc\"]\n",
-              "docs/README.md": "# {serviceName}\n",
-              ".env.example": "PORT=8000\nSERVICE_NAME={serviceName}\n"
+              "cmd/{{serviceName}}/main.go": "TEMPLATE_REF::go-fiber/cmd/serviceName/main.go",
+              "go.mod": "module example.com/{{serviceName}}\n\ngo 1.22\n\nrequire github.com/gofiber/fiber/v2 v2.52.0\n",
+              "deploy/Dockerfile": "FROM golang:1.22-alpine\nWORKDIR /app\nCOPY . .\nRUN go build -o svc ./cmd/{{serviceName}}\nENV PORT={{port}}\nCMD [\"./svc\"]\n",
+              "docs/README.md": "# {{serviceName}}\n",
+              ".env.example": "PORT={{port}}\nSERVICE_NAME={{serviceName}}\n"
             }
           }
         }

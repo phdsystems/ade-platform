@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install dependencies
+      run: |
+        npm ci
+        cd cli && npm ci && cd ..
+        cd vscode-extension && npm ci && cd ..
+
+    - name: Build all components
+      run: |
+        cd cli && npm run build && cd ..
+        cd vscode-extension && npm run compile && cd ..
+
+    - name: Package CLI
+      run: |
+        cd cli
+        npm pack
+        mv *.tgz ../ade-core.tgz
+
+    - name: Package VSCode Extension
+      run: |
+        cd vscode-extension
+        npm run package
+        mv *.vsix ../ade-extension.vsix
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ade-core.tgz
+          ade-extension.vsix
+        body: |
+          ## ADE Platform Release
+
+          ### Installation
+
+          #### CLI Tool
+          ```bash
+          npm install -g ade-core.tgz
+          ```
+
+          #### VSCode Extension
+          1. Download `ade-extension.vsix`
+          2. In VSCode: Extensions → ... → Install from VSIX
+
+          ### What's Changed
+          See [CHANGELOG.md](https://github.com/phdsystems/ade-platform/blob/main/CHANGELOG.md)
+
+    - name: Publish CLI to npm (optional)
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+      run: |
+        cd cli
+        npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      continue-on-error: true
