@@ -8,6 +8,7 @@ Welcome to the ADE Platform documentation! This guide will help you understand, 
 - [Quick Start Guide](../README.md#quick-start) - Get up and running quickly
 - [Installation](../README.md#installation) - Detailed installation instructions
 - [First Project](guides/first-project.md) - Create your first scaffolded project
+- ⚡ [Performance Guide](performance.md) - Understanding optimizations and benchmarks
 
 ### Development
 - [Development Setup](development/setup.md) - Set up your development environment

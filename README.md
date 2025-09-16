@@ -13,11 +13,13 @@ ADE Platform is a comprehensive development environment that provides:
 ## Features
 
 - 🚀 **Multi-Language Support**: Python (FastAPI), Node.js (Express), Go (Fiber)
+- ⚡ **Ultra-Fast Package Managers**: uv for Python (10-100x faster), pnpm for Node.js (2x faster)
 - 📁 **Domain-Driven Structure**: Enforced conventions for scalable architecture
 - 🔧 **VSCode Integration**: Scaffold and preview directly from your editor
-- 📦 **Template Engine**: Customizable templates for different tech stacks
-- 🐳 **Docker Ready**: Pre-configured Dockerfiles for all templates
+- 📦 **Production-Ready Templates**: Optimized for performance from day one
+- 🐳 **Optimized Docker**: Multi-stage builds, distroless images, minimal sizes
 - ✅ **Quality Tools**: Built-in linting, formatting, and git hooks
+- 📊 **Performance Monitoring**: Prometheus metrics, health checks, logging
 
 ## Quick Start
 
@@ -171,6 +173,7 @@ MIT - see [LICENSE](LICENSE) for details
 
 - 📚 [Full Documentation](docs/README.md) - Complete documentation index
 - 🚀 [Development Setup](docs/development/setup.md) - Get started with development
+- ⚡ [Performance Guide](docs/performance.md) - Optimization details and benchmarks
 - 🧪 [VSCode Extension Testing](docs/development/vscode-extension.md) - Test the extension
 - 📝 [CLI Commands Reference](docs/api/cli-commands.md) - Detailed CLI usage
 

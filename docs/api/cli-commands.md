@@ -155,25 +155,51 @@ ade-core scaffold \
     ├── deploy/        # Deployment configs
     ├── .env.example   # Environment template
     ├── .gitignore     # Git ignore file
+    ├── Makefile       # Common commands
     └── [language-specific files]
 ```
 
 ### Language-Specific Files
 
 #### Python (FastAPI)
-- `src/app/main.py` - FastAPI application
+- `src/app/main.py` - FastAPI application with performance optimizations
 - `requirements.txt` - Python dependencies
-- `deploy/Dockerfile` - Docker configuration
+- `pyproject.toml` - Modern Python project configuration
+- `Makefile` - Commands using uv (10-100x faster than pip)
+- `deploy/Dockerfile` - Multi-stage build with uv
+
+**Quick Start:**
+```bash
+make install  # Install with uv (ultra-fast)
+make run      # Start development server
+make docker-build  # Build optimized image
+```
 
 #### Node.js (Express)
-- `src/index.mjs` - Express application
-- `package.json` - Node dependencies
-- `deploy/Dockerfile` - Docker configuration
+- `src/index.mjs` - Express application with performance middleware
+- `package.json` - Node dependencies with pnpm
+- `Makefile` - Commands using pnpm (2x faster than npm)
+- `deploy/Dockerfile` - Multi-stage build with pnpm
+- `.npmrc` - pnpm configuration
+
+**Quick Start:**
+```bash
+make install  # Install with pnpm (fast)
+make run      # Start development server
+make docker-build  # Build optimized image
+```
 
 #### Go (Fiber)
-- `cmd/<service>/main.go` - Fiber application
+- `cmd/<service>/main.go` - Fiber application with prefork
 - `go.mod` - Go module file
-- `deploy/Dockerfile` - Docker configuration
+- `deploy/Dockerfile` - Distroless image (~8MB)
+
+**Quick Start:**
+```bash
+go mod download  # Download dependencies
+go run cmd/*/main.go  # Start development server
+docker build -t service .  # Build minimal image
+```
 
 ## validate
 

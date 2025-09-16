@@ -5,10 +5,16 @@ Complete guide for setting up the ADE Platform development environment.
 ## System Requirements
 
 - **Node.js**: 20.0.0 or higher
-- **npm**: 8.0.0 or higher
+- **pnpm**: 8.15.0 or higher (faster alternative to npm)
 - **Git**: 2.25.0 or higher
 - **VSCode**: 1.90.0 or higher (for extension development)
 - **Operating System**: Windows, macOS, or Linux
+
+### Recommended Package Managers (for scaffolded projects)
+
+- **Python**: [uv](https://github.com/astral-sh/uv) - 10-100x faster than pip
+- **Node.js**: [pnpm](https://pnpm.io) - 2x faster than npm, efficient disk usage
+- **Go**: Native go modules
 
 ## Quick Setup
 
