@@ -1,11 +1,40 @@
 {
   "name": "ade-core",
   "version": "1.0.0",
-  "description": "ADE Platform Core CLI Tool",
+  "description": "ADE Platform Core CLI Tool - Fast scaffolding for microservices with best practices",
   "type": "module",
+  "keywords": [
+    "cli",
+    "scaffold",
+    "microservices",
+    "generator",
+    "boilerplate",
+    "fastapi",
+    "express",
+    "fiber",
+    "ddd",
+    "domain-driven-design"
+  ],
+  "author": "PHD Systems",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phdsystems/ade-platform.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/phdsystems/ade-platform/issues"
+  },
+  "homepage": "https://github.com/phdsystems/ade-platform/tree/main/cli",
   "bin": {
     "ade-core": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "templates",
+    "config",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
