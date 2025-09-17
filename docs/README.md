@@ -1,69 +1,59 @@
-# ADE Platform Documentation
+# Documentation
 
-Welcome to the ADE Platform documentation! This guide will help you understand, use, and contribute to the Application Development Environment platform.
-
-## 📚 Documentation Structure
-
-### Getting Started
-- [Quick Start Guide](../README.md#quick-start) - Get up and running quickly
-- 📦 [ADE Core Installation](guides/ade-core-installation.md) - Complete CLI installation guide
-- [Installation](../README.md#installation) - Detailed installation instructions
-- [First Project](guides/first-project.md) - Create your first scaffolded project
-- ⚡ [Performance Guide](performance.md) - Understanding optimizations and benchmarks
-
-### Development
-- [Development Setup](development/setup.md) - Set up your development environment
-- [Testing Guide](development/testing.md) - How to test the platform components
-- [VSCode Extension Development](development/vscode-extension.md) - Develop and test the extension
-- [CLI Development](development/cli.md) - Work with the CLI tool
-
-### API Reference
-- [CLI Commands](api/cli-commands.md) - Complete CLI command reference
-- [Stack Registry](api/stack-registry.md) - Configuration schema and options
-- [Template System](api/templates.md) - Handlebars templates and variables
-
-### Guides
-- 📦 [ADE Core CLI Installation](guides/ade-core-installation.md) - Complete installation guide for all platforms
-- [Creating Your First Project](guides/first-project.md)
-- [Adding New Languages/Frameworks](guides/adding-languages.md)
-- [Custom Templates](guides/custom-templates.md)
-- [CI/CD Integration](guides/cicd-integration.md)
-- 🪟 [Windows Quick Start](guides/windows-quick-start.md) - Fast setup for Windows/WSL users
-- 🔧 [VSCode Extension Build & Deploy](guides/vscode-extension-deployment.md) - Complete extension deployment guide
-
-### Architecture
-- [System Architecture](architecture/overview.md) - High-level system design
-- [Domain-Driven Design](architecture/ddd.md) - DDD implementation details
-- [Plugin System](architecture/plugins.md) - Extensibility architecture
-
-### Contributing
-- [Contributing Guide](../CONTRIBUTING.md) - How to contribute
-- [Code Style](development/code-style.md) - Coding standards
-- [Release Process](development/release.md) - How releases are managed
+Welcome to the ADE Platform documentation.
 
 ## Quick Links
 
-- 🏠 [Main README](../README.md)
-- 📝 [CHANGELOG](../CHANGELOG.md)
-- 🤝 [CONTRIBUTING](../CONTRIBUTING.md)
-- ⚖️ [LICENSE](../LICENSE)
-- 🐛 [Issue Tracker](https://github.com/phdsystems/ade-platform/issues)
+- 🚀 [Quick Install](guides/ade-core-installation.md#quick-install)
+- 📖 [CLI Commands](api/cli-commands.md)
+- 🔧 [VSCode Extension](guides/vscode-extension-deployment.md)
+- 🪟 [Windows Setup](guides/windows-quick-start.md)
+
+## Documentation Structure
+
+### Getting Started
+
+- [Installation Guide](guides/ade-core-installation.md) - Complete installation instructions
+- [First Project](guides/first-project.md) - Create your first service
+- [Windows Quick Start](guides/windows-quick-start.md) - Windows/WSL setup
+
+### Features & Concepts
+
+- [Features Overview](features.md) - Complete feature list
+- [Project Structure](project-structure.md) - Repository and generated project structure
+- [Performance Guide](performance.md) - Optimization details
+
+### User Guides
+
+- [CLI Commands](api/cli-commands.md) - Command reference
+- [Custom Templates](guides/custom-templates.md) - Create custom templates
+- [Adding Languages](guides/adding-languages.md) - Add new languages/frameworks
+
+### Development
+
+- [Development Setup](development/setup.md) - Set up development environment
+- [Testing Guide](development/testing.md) - Testing documentation
+- [VSCode Extension Development](development/vscode-extension.md) - Extension development
+
+### Deployment
+
+- [VSCode Extension Deployment](guides/vscode-extension-deployment.md) - Build and deploy extension
+- [CI/CD Integration](guides/cicd-integration.md) - Continuous integration setup
+
+### API Reference
+
+- [CLI Commands](api/cli-commands.md) - Complete CLI reference
+- [Stack Registry](api/stack-registry.md) - Configuration schema
+- [Template System](api/templates.md) - Template variables and syntax
+
+### Contributing
+
+- [Contributing Guide](../CONTRIBUTING.md) - How to contribute
+- [Code Style](development/code-style.md) - Coding standards
+- [Release Process](development/release.md) - Release management
+
+## Need Help?
+
+- 🐛 [Report Issues](https://github.com/phdsystems/ade-platform/issues)
 - 💬 [Discussions](https://github.com/phdsystems/ade-platform/discussions)
-
-## Component Documentation
-
-### CLI Tool (`ade-core`)
-The command-line interface for scaffolding and validating projects. See [CLI Commands](api/cli-commands.md) for detailed usage.
-
-### VSCode Extension
-Visual Studio Code extension for interactive scaffolding. See [VSCode Extension Development](development/vscode-extension.md) for details.
-
-### Template System
-Handlebars-based template engine for generating project files. See [Template System](api/templates.md) for customization.
-
-## Getting Help
-
-- Check the [Troubleshooting Guide](guides/troubleshooting.md)
-- Search [existing issues](https://github.com/phdsystems/ade-platform/issues)
-- Ask in [Discussions](https://github.com/phdsystems/ade-platform/discussions)
-- Review [examples](../example-project/) in the repository
+- 📝 [Changelog](../CHANGELOG.md)
