@@ -16,17 +16,32 @@
 
 ## Installation
 
-### Global Installation
+### Quick Install
 
 ```bash
-# Using pnpm (recommended)
-pnpm install -g ade-core
-
-# Using npm
+# Install globally with npm
 npm install -g ade-core
+
+# Verify installation
+ade-core --version
 ```
 
-### Local Development
+📦 **[Full Installation Guide](../docs/guides/ade-core-installation.md)** - Detailed instructions for all platforms including Windows, macOS, Linux, WSL, and Docker.
+
+### Alternative Installation Methods
+
+```bash
+# Using pnpm (faster)
+pnpm install -g ade-core
+
+# Using npx (no install)
+npx ade-core scaffold
+
+# Using yarn
+yarn global add ade-core
+```
+
+### Build from Source
 
 ```bash
 # Clone repository

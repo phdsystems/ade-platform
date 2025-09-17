@@ -6,6 +6,7 @@ Welcome to the ADE Platform documentation! This guide will help you understand, 
 
 ### Getting Started
 - [Quick Start Guide](../README.md#quick-start) - Get up and running quickly
+- 📦 [ADE Core Installation](guides/ade-core-installation.md) - Complete CLI installation guide
 - [Installation](../README.md#installation) - Detailed installation instructions
 - [First Project](guides/first-project.md) - Create your first scaffolded project
 - ⚡ [Performance Guide](performance.md) - Understanding optimizations and benchmarks
@@ -22,6 +23,7 @@ Welcome to the ADE Platform documentation! This guide will help you understand, 
 - [Template System](api/templates.md) - Handlebars templates and variables
 
 ### Guides
+- 📦 [ADE Core CLI Installation](guides/ade-core-installation.md) - Complete installation guide for all platforms
 - [Creating Your First Project](guides/first-project.md)
 - [Adding New Languages/Frameworks](guides/adding-languages.md)
 - [Custom Templates](guides/custom-templates.md)

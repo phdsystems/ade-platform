@@ -27,23 +27,39 @@ ADE Platform is a comprehensive development environment that provides:
 
 - Node.js 20+ and npm
 - VSCode (for extension features)
-- Git
+- Git (optional, for development)
 
-### Installation
+### Install ADE Core CLI
+
+```bash
+# Install globally via npm (easiest)
+npm install -g ade-core
+
+# Or using pnpm (faster)
+npm install -g pnpm
+pnpm install -g ade-core
+
+# Verify installation
+ade-core --version
+```
+
+📦 **[Full Installation Guide](docs/guides/ade-core-installation.md)** - Detailed instructions for all platforms
+
+### Build from Source (Optional)
 
 ```bash
 # Clone the repository
 git clone https://github.com/phdsystems/ade-platform.git
 cd ade-platform
 
-# Install dependencies (using pnpm for speed)
+# Install dependencies
 pnpm install
 
 # Build the CLI tool
 pnpm run build:cli
 
-# Install globally (optional)
-pnpm link
+# Link globally
+cd cli && pnpm link
 ```
 
 ### VSCode Extension Setup
